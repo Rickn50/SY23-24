@@ -46,6 +46,7 @@
             this.AttackCombo = new System.Windows.Forms.ComboBox();
             this.AttackTypeComboBox = new System.Windows.Forms.Label();
             this.DebugBox = new System.Windows.Forms.TextBox();
+            this.Openbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LevelUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HPUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GenerationUpDown)).BeginInit();
@@ -209,11 +210,22 @@
             this.DebugBox.Size = new System.Drawing.Size(226, 65);
             this.DebugBox.TabIndex = 27;
             // 
+            // Openbutton
+            // 
+            this.Openbutton.Location = new System.Drawing.Point(292, 238);
+            this.Openbutton.Name = "Openbutton";
+            this.Openbutton.Size = new System.Drawing.Size(74, 52);
+            this.Openbutton.TabIndex = 28;
+            this.Openbutton.Text = "Open";
+            this.Openbutton.UseVisualStyleBackColor = true;
+            
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Openbutton);
             this.Controls.Add(this.DebugBox);
             this.Controls.Add(this.AttackTypeComboBox);
             this.Controls.Add(this.AttackCombo);
@@ -263,6 +275,7 @@
         private System.Windows.Forms.ComboBox AttackCombo;
         private System.Windows.Forms.Label AttackTypeComboBox;
         private System.Windows.Forms.TextBox DebugBox;
+        private System.Windows.Forms.Button Openbutton;
     }
 }
 

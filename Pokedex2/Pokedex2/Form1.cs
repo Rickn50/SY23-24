@@ -17,7 +17,7 @@ namespace Pokedex2
         {
             Special_Attack,Special_Defense,Attack,Defense
         }
-        struct Struct
+        struct Pokemon
         {
             string type;
             int level;
@@ -40,6 +40,7 @@ namespace Pokedex2
             {
                 StreamReader inFIle = new StreamReader("Pokemon.Txt");
                 string S = inFIle.ReadToEnd();
+                inFIle.Close();
             }
         }
 
@@ -68,6 +69,9 @@ namespace Pokedex2
             {
                 DebugBox.Text += Shinycheck.Text;
             }
+                StreamWriter outfile = new StreamWriter("Pokemon.txt");
+            outfile.WriteLine(DebugBox.Text);
+            outfile.Close();
 
         }
     }
