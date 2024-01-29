@@ -47,6 +47,11 @@
             this.AttackTypeComboBox = new System.Windows.Forms.Label();
             this.DebugBox = new System.Windows.Forms.TextBox();
             this.Openbutton = new System.Windows.Forms.Button();
+            this.FirstButton = new System.Windows.Forms.Button();
+            this.Previousbutton = new System.Windows.Forms.Button();
+            this.Nextbutton = new System.Windows.Forms.Button();
+            this.Lastbutton = new System.Windows.Forms.Button();
+            this.Currentlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.LevelUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HPUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GenerationUpDown)).BeginInit();
@@ -184,9 +189,9 @@
             this.AttackCombo.FormattingEnabled = true;
             this.AttackCombo.Items.AddRange(new object[] {
             "Attack",
-            "SP_Attack",
+            "Special_Attack",
             "Defense",
-            "SP_Defense"});
+            "Special_Defense"});
             this.AttackCombo.Location = new System.Drawing.Point(61, 226);
             this.AttackCombo.Name = "AttackCombo";
             this.AttackCombo.Size = new System.Drawing.Size(121, 24);
@@ -212,19 +217,71 @@
             // 
             // Openbutton
             // 
-            this.Openbutton.Location = new System.Drawing.Point(292, 238);
+            this.Openbutton.Location = new System.Drawing.Point(659, 327);
             this.Openbutton.Name = "Openbutton";
-            this.Openbutton.Size = new System.Drawing.Size(74, 52);
+            this.Openbutton.Size = new System.Drawing.Size(75, 32);
             this.Openbutton.TabIndex = 28;
             this.Openbutton.Text = "Open";
             this.Openbutton.UseVisualStyleBackColor = true;
-            
+            // 
+            // FirstButton
+            // 
+            this.FirstButton.Location = new System.Drawing.Point(27, 380);
+            this.FirstButton.Name = "FirstButton";
+            this.FirstButton.Size = new System.Drawing.Size(75, 23);
+            this.FirstButton.TabIndex = 29;
+            this.FirstButton.Text = "First";
+            this.FirstButton.UseVisualStyleBackColor = true;
+            this.FirstButton.Click += new System.EventHandler(this.FirstButton_Click);
+            // 
+            // Previousbutton
+            // 
+            this.Previousbutton.Location = new System.Drawing.Point(108, 380);
+            this.Previousbutton.Name = "Previousbutton";
+            this.Previousbutton.Size = new System.Drawing.Size(75, 23);
+            this.Previousbutton.TabIndex = 30;
+            this.Previousbutton.Text = "Previous";
+            this.Previousbutton.UseVisualStyleBackColor = true;
+            this.Previousbutton.Click += new System.EventHandler(this.Previousbutton_Click);
+            // 
+            // Nextbutton
+            // 
+            this.Nextbutton.Location = new System.Drawing.Point(185, 380);
+            this.Nextbutton.Name = "Nextbutton";
+            this.Nextbutton.Size = new System.Drawing.Size(75, 23);
+            this.Nextbutton.TabIndex = 31;
+            this.Nextbutton.Text = "Next";
+            this.Nextbutton.UseVisualStyleBackColor = true;
+            this.Nextbutton.Click += new System.EventHandler(this.Nextbutton_Click);
+            // 
+            // Lastbutton
+            // 
+            this.Lastbutton.Location = new System.Drawing.Point(265, 380);
+            this.Lastbutton.Name = "Lastbutton";
+            this.Lastbutton.Size = new System.Drawing.Size(75, 23);
+            this.Lastbutton.TabIndex = 32;
+            this.Lastbutton.Text = "Last";
+            this.Lastbutton.UseVisualStyleBackColor = true;
+            this.Lastbutton.Click += new System.EventHandler(this.Lastbutton_Click);
+            // 
+            // Currentlabel
+            // 
+            this.Currentlabel.AutoSize = true;
+            this.Currentlabel.Location = new System.Drawing.Point(347, 386);
+            this.Currentlabel.Name = "Currentlabel";
+            this.Currentlabel.Size = new System.Drawing.Size(0, 16);
+            this.Currentlabel.TabIndex = 33;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Currentlabel);
+            this.Controls.Add(this.Lastbutton);
+            this.Controls.Add(this.Nextbutton);
+            this.Controls.Add(this.Previousbutton);
+            this.Controls.Add(this.FirstButton);
             this.Controls.Add(this.Openbutton);
             this.Controls.Add(this.DebugBox);
             this.Controls.Add(this.AttackTypeComboBox);
@@ -276,6 +333,11 @@
         private System.Windows.Forms.Label AttackTypeComboBox;
         private System.Windows.Forms.TextBox DebugBox;
         private System.Windows.Forms.Button Openbutton;
+        private System.Windows.Forms.Button FirstButton;
+        private System.Windows.Forms.Button Previousbutton;
+        private System.Windows.Forms.Button Nextbutton;
+        private System.Windows.Forms.Button Lastbutton;
+        private System.Windows.Forms.Label Currentlabel;
     }
 }
 
