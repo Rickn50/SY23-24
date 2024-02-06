@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Pokedex2
 {
-    
+
     public partial class Form1 : Form
     {
         private int current;
@@ -39,7 +39,7 @@ namespace Pokedex2
         {
             InitializeComponent();
             current = 0;
-            Count = 0;   
+            Count = 0;
             Currentlabel.Text = current.ToString();
             pokemons = new Pokemon[50];
         }
@@ -49,10 +49,10 @@ namespace Pokedex2
             if (File.Exists("Pokemon.Txt"))
             {
                 StreamReader inFIle = new StreamReader("Pokemon.Txt");
-                while(!inFIle.EndOfStream)
+                while (!inFIle.EndOfStream)
                 {
-                string S = inFIle.ReadLine();
-                Pokemon p = ReadPokemon(S);
+                    string S = inFIle.ReadLine();
+                    Pokemon p = ReadPokemon(S);
                     pokemons[Count] = p;
                     Count++;
                 }
@@ -84,8 +84,7 @@ namespace Pokedex2
             return p;
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Save()
         {
             string tmp = "";
             DebugBox.Clear();
@@ -109,9 +108,39 @@ namespace Pokedex2
             tmp += "|";
             pokemons[current] = ReadPokemon(tmp);
 
-            //StreamWriter outfile = new StreamWriter("Pokemon.txt");
-            //outfile.WriteLine(tmp);
-           // outfile.Close();
+            StreamWriter outfile = new StreamWriter("Pokemon.txt");
+            for (int i= 0; i < Count; i++)
+            {
+                outfile.WriteLine(PokemonToString(pokemons[i]));
+            }
+            outfile.Close();
+        }
+
+        private string PokemonToString(Pokemon p)
+        {
+            string retVal = "";
+            retVal += p.Name.ToString();
+            retVal +=
+            retVal += p.type.ToString();
+            retVal +=
+            retVal += p.level.ToString();
+            retVal +=
+            retVal += p.HP.ToString();
+            retVal +=
+            retVal += p.EXP.ToString();
+            retVal +=
+            retVal += p.Generation.ToString();
+            retVal +=
+            retVal += p.attacktype.ToString();
+            retVal +=
+            retVal += p.Legendary.ToString();
+            retVal +=
+            retVal += p.Shiny.ToString();
+            return retVal;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Save();
 
         }
         private void ShowPokemon(Pokemon p)
@@ -129,6 +158,7 @@ namespace Pokedex2
 
         private void FirstButton_Click(object sender, EventArgs e)
         {
+            Save();
             current = 0;
             Currentlabel.Text = current.ToString();
             ShowPokemon(pokemons[current]);
@@ -136,6 +166,7 @@ namespace Pokedex2
 
         private void Lastbutton_Click(object sender, EventArgs e)
         {
+            Save();
             current = Count-1;
             Currentlabel.Text = current.ToString();
             ShowPokemon(pokemons[current]);
@@ -146,6 +177,7 @@ namespace Pokedex2
         {
             if (current > 0)
             {
+            Save();
             current--;
             Currentlabel.Text = current.ToString();
             }
@@ -157,10 +189,34 @@ namespace Pokedex2
         {
             if (current < Count -1)
             {
+            Save();
                 current++;
                 Currentlabel.Text = current.ToString();
             }
             ShowPokemon(pokemons[current]);
+
+        }
+        private void clear()
+        {
+            NameTextBox.Text = "";
+            TypeTextBox.Text = "";
+            LevelUpDown.Value = 0;
+            HPUpDown.Value = 0;
+            EXPUpDown.Value = 0;
+            GenerationUpDown.Value = 0;
+            AttackCombo.Text = "";
+            Legendarycheck.Checked = false;
+            Shinycheck.Checked = false;
+        }
+        private void Newbutton_Click(object sender, EventArgs e)
+        {
+            current = Count;
+            Count++;
+            clear();
+        }
+
+        private void DebugBox_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

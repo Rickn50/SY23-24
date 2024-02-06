@@ -52,6 +52,7 @@
             this.Nextbutton = new System.Windows.Forms.Button();
             this.Lastbutton = new System.Windows.Forms.Button();
             this.Currentlabel = new System.Windows.Forms.Label();
+            this.Newbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LevelUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HPUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GenerationUpDown)).BeginInit();
@@ -214,6 +215,7 @@
             this.DebugBox.ReadOnly = true;
             this.DebugBox.Size = new System.Drawing.Size(226, 65);
             this.DebugBox.TabIndex = 27;
+            this.DebugBox.TextChanged += new System.EventHandler(this.DebugBox_TextChanged);
             // 
             // Openbutton
             // 
@@ -272,11 +274,22 @@
             this.Currentlabel.Size = new System.Drawing.Size(0, 16);
             this.Currentlabel.TabIndex = 33;
             // 
+            // Newbutton
+            // 
+            this.Newbutton.Location = new System.Drawing.Point(659, 281);
+            this.Newbutton.Name = "Newbutton";
+            this.Newbutton.Size = new System.Drawing.Size(75, 40);
+            this.Newbutton.TabIndex = 34;
+            this.Newbutton.Text = "New";
+            this.Newbutton.UseVisualStyleBackColor = true;
+            this.Newbutton.Click += new System.EventHandler(this.Newbutton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Newbutton);
             this.Controls.Add(this.Currentlabel);
             this.Controls.Add(this.Lastbutton);
             this.Controls.Add(this.Nextbutton);
@@ -338,6 +351,7 @@
         private System.Windows.Forms.Button Nextbutton;
         private System.Windows.Forms.Button Lastbutton;
         private System.Windows.Forms.Label Currentlabel;
+        private System.Windows.Forms.Button Newbutton;
     }
 }
 
