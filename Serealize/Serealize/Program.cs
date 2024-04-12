@@ -17,7 +17,6 @@ namespace Serealize
             public int Calories { get; set; }
             public decimal price { get; set; }
             public string Picture { get; set; }
-
         }
         static void Main(string[] args)
         {
